@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Report | ToDo Application using containers</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #text_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 10vh;
+        }
+        
+        #text {
+            font-weight: 10;
+            opacity: 1;
+            animation: animate 8s ease-out forwards infinite;
+            animation-delay: 1s;
+        }
+        /* For animation */
+        
+        @keyframes animate {
+            0% {
+                letter-spacing: -15px;
+            }
+            20% {
+                letter-spacing: 10px;
+            }
+            100% {
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .fishes {
+            position: relative;
+            top: 20px;
+            left: 235px;
+        }
+        
+        .fish {
+            position: absolute;
+            top: 60px;
+            left: 80px;
+        }
+    </style>
+
+</head>
+
+
+
+<body style="background-color:rgb(148, 148, 148);">
+    <div style="position: relative; left: 0; top: 0;">
+        <img src="image/FIIN.PNG" class="fishes" />
+        <img src="" class="fish" />
+    </div>
+    <header class="site-header">
+
+        <div class="wrapper">
+
+            <span class="site-title">
+      
+    </span>
+
+            <nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="">
+                <div class="post" id="text_container">
+
+                    <header class="post-header">
+
+                        <h1 class="post-title" style="color:#000000" id="text"> Report: <span class=caret>ToDo Application using containers </span>
+
+                </div>
+                </h1>
+
+                </header>
+            </div>
+
+
+
+            <center>
+
+                <div id="toc_container">
+                    <p class="toc_title" style="color:#be0000">Contents</p>
+                    <ul class="toc_list">
+                        <li><a href="#introduction" style="color:#000000">1 Introduction</a></li>
+                        <li><a href="#goals" style="color:#000000">2 Goals</a></li>
+                        <li><a href="#SpreadSheet" style="color:#000000">3 Create a versatile Todo app using (Item/Model) based containers.</a></li>
+                        <li><a href="#conclusion" style="color:#000000">4 Conclusion</a></li>
+                    </ul>
+                </div>
+
+
+            </center>
+
+            <div>
+                <h1 id="introduction">
+                    <u style="color:#a50202">Introduction</u></p>
+                </h1>
+
+
+
+                <p style="color:#000000">
+                    Qt is a powerful software which it allows developers to develop application in one codebase framework for any platform , in this practical course we tried to creat our application "To Do " and we tied to include as many useful Qt components that might
+                    help us to develop our progress in the future.
+                </p>
+            </div>
+
+            <div>
+                <h1 id="goals">
+                    <u style="color:#a50202">2 Goals</u></p>
+                </h1>
+
+                <li>The aim of this project is to make lists to arrange our daily life schedule.</li>
+                <li> Being able to create an application using (Item/Model)</li>
+            </div>
+
+
+            <div>
+                <h1 id="SpreadSheet" style="color:#a30000"><u>Create a versatile Todo app using (Item/Model) based containers</u></h1>
+
+                <p>Every person has got his or her to-do list.In the to-do list, you can properly arrange your daily life schedule. If not so, you can note down your list of goals to attain in a year or so.
+                </p>
+                <p>In this task we will create a todo app </p>
+
+                <center>
+                    <img src="./image/anim.gif">
+                </center>
+
+                <p style=>So far our apps will be like this
+                </p>
+                <li>Add list</li>
+                <li>Add activity</li>
+                <li>Delete list</li>
+                <li>Delete activity</li>
+                <li>Close</li>
+
+
+                <div class="center">
+                    <img src="./image/Capture44.PNG" />
+                    <div class="figcaption">
+                        To Do
+                    </div>
+                </div>
+                <p>
+
+                    We will create 2 dialogs:
+                    <li> the first one creates the newly added list of your To Do app. </li>
+                    <li> And the second we can create a new activity</li>
+                </p>
+
+                <p style="color:#979797"><code class="language-plaintext highlighter-black">The newly added list</code> </p>
+
+                <div class="center">
+                    <img src="./image/Capture6.PNG" />
+                    <div class="figcaption">
+
+                    </div>
+                </div>
+                <div class="center">
+                    <img src="./image/Capture2.PNG" />
+                    <div class="figcaption">
+
+                    </div>
+                </div>
+                <p style="color:#979797"><code class="language-plaintext highlighter-black">newlistwindow.h</code> with the following code:</p>
+
+                <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">ifndef</span><span style="color:#004a43; "> NEWLISTWINDOW_H</span>
+                    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> NEWLISTWINDOW_H</span>
+                    
+                    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QDialog</span><span style="color:#0000e6; ">&gt;</span>
+                    
+                    namespace Ui <span style="color:#0000ff; ">{</span>
+                    class newListWindow<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    
+                    class newListWindow <span style="color:#0000ff; ">:</span> public QDialog
+                    <span style="color:#0000ff; ">{</span>
+                        Q_OBJECT
+                    
+                    <span style="color:#e34adc; ">public:</span>
+                        <span style="color:#0000ff; font-weight:bold; ">explicit</span> newListWindow<span style="color:#0000ff; ">(</span>QWidget <span style="color:#0000ff; ">*</span>parent <span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; ">~</span>newListWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString getType<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString getDescription<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        bool isImp<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    
+                    private slots<span style="color:#0000ff; ">:</span>
+                        <span style="color:#0000ff; font-weight:bold; ">void</span> on_buttonBox_accepted<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    
+                    <span style="color:#e34adc; ">private:</span>
+                        Ui<span style="color:#0000ff; ">::</span>newListWindow <span style="color:#0000ff; ">*</span>ui<span style="color:#0000ff; ">;</span>
+                        QString name<span style="color:#0000ff; ">;</span>
+                        QString type<span style="color:#0000ff; ">;</span>
+                        bool important<span style="color:#0000ff; ">;</span>
+                        QString Description <span style="color:#0000ff; ">;</span>
+                    
+                    <span style="color:#0000ff; ">}</span><span style="color:#0000ff; ">;</span>
+                    
+                    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span><span style="color:#004a43; "> </span><span style="color:#008000; ">// NEWLISTWINDOW_H</span>
+                    </pre>
+
+
+                <p style="color:#979797"><code class="language-plaintext highlighter-black">newlistwindow.cpp</code> with the following code:</p>
+
+
+                <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">newlistwindow.h</span><span style="color:#0000e6; ">"</span>
+                    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">ui_newlistwindow.h</span><span style="color:#0000e6; ">"</span>
+                    
+                    
+                    newListWindow<span style="color:#0000ff; ">::</span>newListWindow<span style="color:#0000ff; ">(</span>QWidget <span style="color:#0000ff; ">*</span>parent<span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">:</span>
+                        QDialog<span style="color:#0000ff; ">(</span>parent<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                        ui<span style="color:#0000ff; ">(</span>new Ui<span style="color:#0000ff; ">::</span>newListWindow<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setupUi<span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setWindowTitle<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Creer une nouvelle liste</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    
+                    newListWindow<span style="color:#0000ff; ">::</span><span style="color:#0000ff; ">~</span>newListWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        delete ui<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    
+                    QString newListWindow<span style="color:#0000ff; ">::</span>getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">return</span> name<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    
+                    QString newListWindow<span style="color:#0000ff; ">::</span>getType<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    
+                        <span style="color:#0000ff; font-weight:bold; ">return</span> type<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    QString newListWindow<span style="color:#0000ff; ">::</span>getDescription<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    
+                        <span style="color:#0000ff; font-weight:bold; ">return</span> Description<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                        bool newListWindow<span style="color:#0000ff; ">::</span>isImp<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                            <span style="color:#0000ff; font-weight:bold; ">if</span> <span style="color:#0000ff; ">(</span>ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>checkBox<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isChecked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span>true<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                                <span style="color:#0000ff; font-weight:bold; ">return</span> true<span style="color:#0000ff; ">;</span>
+                            <span style="color:#0000ff; ">}</span><span style="color:#0000ff; font-weight:bold; ">else</span><span style="color:#0000ff; ">{</span>
+                                <span style="color:#0000ff; font-weight:bold; ">return</span> false<span style="color:#0000ff; ">;</span>
+                            <span style="color:#0000ff; ">}</span>
+                    <span style="color:#0000ff; ">}</span>
+                    
+                    <span style="color:#0000ff; font-weight:bold; ">void</span> newListWindow<span style="color:#0000ff; ">::</span>on_buttonBox_accepted<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        name <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>lineEdit<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>text<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        type <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>lineEdit2<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>text<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        Description<span style="color:#0000ff; ">=</span>ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>lineEdit3<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>text<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        important <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>checkBox<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isChecked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    
+                    <span style="color:#0000ff; ">}</span>
+                    </pre>
+
+                <center>
+                    <P>As a result</P>
+                    <img src="./image/33.gif">
+                </center>
+
+                <p style="color:#979797"><code class="language-plaintext highlighter-black">Ading new activity</code> </p>
+
+                <div class="center">
+                    <img src="./image/Capture5.PNG" />
+                    <div class="figcaption">
+
+                    </div>
+                </div>
+                <div class="center">
+                    <img src="./image/Capture3.PNG" />
+                    <div class="figcaption">
+
+                    </div>
+                </div>
+                <p style="color:#979797"><code class="language-plaintext highlighter-black">newactivitywindow.h</code> with the following code:</p>
+
+                <pre style="color:#000020;background:#f6f8ff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">ifndef</span><span style="color:#004a43; "> NEWACTIVITYWINDOW_H</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> NEWACTIVITYWINDOW_H</span>
+    
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">QDialog</span><span style="color:#800000; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">QDate</span><span style="color:#800000; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">QCheckBox</span><span style="color:#800000; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">"</span><span style="color:#40015a; ">activity.h</span><span style="color:#800000; ">"</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">QMessageBox</span><span style="color:#800000; ">&gt;</span>
+    
+    <span style="color:#200080; font-weight:bold; ">namespace</span> Ui <span style="color:#406080; ">{</span>
+    <span style="color:#200080; font-weight:bold; ">class</span> newActivityWindow<span style="color:#406080; ">;</span>
+    <span style="color:#406080; ">}</span>
+    
+    <span style="color:#200080; font-weight:bold; ">class</span> newActivityWindow <span style="color:#406080; ">:</span> <span style="color:#200080; font-weight:bold; ">public</span> <span style="color:#003060; ">QDialog</span>
+    <span style="color:#406080; ">{</span>
+        <span style="color:#004a43; ">Q_OBJECT</span>
+    
+    <span style="color:#200080; font-weight:bold; ">public</span><span style="color:#e34adc; ">:</span>
+        <span style="color:#200080; font-weight:bold; ">explicit</span> newActivityWindow<span style="color:#308080; ">(</span><span style="color:#003060; ">QWidget</span> <span style="color:#308080; ">*</span>parent <span style="color:#308080; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+        <span style="color:#308080; ">~</span>newActivityWindow<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QString</span> getName<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QString</span> getDescription<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QDate</span> setDate<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QDate</span> getDate<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+        <span style="color:#200080; font-weight:bold; ">bool</span> isFinished<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+    
+    <span style="color:#200080; font-weight:bold; ">private slots</span><span style="color:#e34adc; ">:</span>
+        <span style="color:#200080; font-weight:bold; ">void</span> on_buttonBox_accepted<span style="color:#308080; ">(</span><span style="color:#308080; ">)</span><span style="color:#406080; ">;</span>
+    
+    <span style="color:#200080; font-weight:bold; ">private</span><span style="color:#e34adc; ">:</span>
+        Ui<span style="color:#406080; ">::</span>newActivityWindow <span style="color:#308080; ">*</span>ui<span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QString</span> name<span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QString</span> Description<span style="color:#406080; ">;</span>
+        <span style="color:#003060; ">QDate</span> data<span style="color:#406080; ">;</span>
+        <span style="color:#200080; font-weight:bold; ">bool</span> Finished<span style="color:#406080; ">;</span>
+        Activity<span style="color:#308080; ">*</span> a<span style="color:#406080; ">;</span>
+    <span style="color:#406080; ">}</span><span style="color:#406080; ">;</span>
+    
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span><span style="color:#004a43; "> </span><span style="color:#595979; ">// NEWACTIVITYWINDOW_H</span>
+    </pre>
+
+
+
+
+            </div>
+
+
+            <p style="color:#979797"><code class="language-plaintext highlighter-rouge">newactivitywindow.cpp</code> with the following code:</p>
+
+
+            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">newactivitywindow.h</span><span style="color:#0000e6; ">"</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">ui_newactivitywindow.h</span><span style="color:#0000e6; ">"</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QCheckBox</span><span style="color:#0000e6; ">&gt;</span>
+                newActivityWindow<span style="color:#0000ff; ">::</span>newActivityWindow<span style="color:#0000ff; ">(</span>QWidget <span style="color:#0000ff; ">*</span>parent<span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">:</span>
+                    QDialog<span style="color:#0000ff; ">(</span>parent<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                    ui<span style="color:#0000ff; ">(</span>new Ui<span style="color:#0000ff; ">::</span>newActivityWindow<span style="color:#0000ff; ">)</span>
+                <span style="color:#0000ff; ">{</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setupUi<span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setWindowTitle<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Ajouter une nouvelle activité</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                newActivityWindow<span style="color:#0000ff; ">::</span><span style="color:#0000ff; ">~</span>newActivityWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    delete ui<span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                QString newActivityWindow<span style="color:#0000ff; ">::</span>getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">return</span> name<span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                QString newActivityWindow<span style="color:#0000ff; ">::</span>getDescription<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">return</span> Description<span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                QDate newActivityWindow<span style="color:#0000ff; ">::</span>setDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    QDate date <span style="color:#0000ff; ">=</span> QDate<span style="color:#0000ff; ">::</span>currentDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>dateEdit<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setDate<span style="color:#0000ff; ">(</span>date<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                QDate newActivityWindow<span style="color:#0000ff; ">::</span>getDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">return</span> data<span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                bool newActivityWindow<span style="color:#0000ff; ">::</span>isFinished<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span> <span style="color:#0000ff; ">(</span>ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>checkBox<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isChecked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span>true<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">return</span> true<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span><span style="color:#0000ff; font-weight:bold; ">else</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">return</span> false<span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> newActivityWindow<span style="color:#0000ff; ">::</span>on_buttonBox_accepted<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    name <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>lineEdit<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>text<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                Description <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>lineEdit2<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>text<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    data <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>dateEdit<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>date<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                Finished <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>checkBox<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isChecked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                </pre>
+
+            <center>
+                <P>As a result</P>
+                <img src="./image/22.gif">
+            </center>
+
+
+
+            <p style="color:#979797"><code class="language-plaintext highlighter-black">mainwindow.cpp</code> with the following code:</p>
+
+            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">mainwindow.h</span><span style="color:#0000e6; ">"</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">ui_mainwindow.h</span><span style="color:#0000e6; ">"</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">list.h</span><span style="color:#0000e6; ">"</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">activity.h</span><span style="color:#0000e6; ">"</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QDate</span><span style="color:#0000e6; ">&gt;</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QErrorMessage</span><span style="color:#0000e6; ">&gt;</span>
+                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QMessageBox</span><span style="color:#0000e6; ">&gt;</span>
+                
+                MainWindow<span style="color:#0000ff; ">::</span>MainWindow<span style="color:#0000ff; ">(</span>QWidget <span style="color:#0000ff; ">*</span>parent<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">:</span>
+                    QMainWindow<span style="color:#0000ff; ">(</span>parent<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                    ui<span style="color:#0000ff; ">(</span>new Ui<span style="color:#0000ff; ">::</span>MainWindow<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setupUi<span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    listModel <span style="color:#0000ff; ">=</span> new QStandardItemModel<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    lastRowSelectedList <span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">;</span>
+                    lastRowSelectedActivities <span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                MainWindow<span style="color:#0000ff; ">::</span><span style="color:#0000ff; ">~</span>MainWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    delete ui<span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_newList_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    lastRowSelectedList <span style="color:#0000ff; ">=</span> arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    newList <span style="color:#0000ff; ">=</span> new newListWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    QObject<span style="color:#0000ff; ">::</span><span style="color:#0000ff; font-weight:bold; ">connect</span><span style="color:#0000ff; ">(</span>newList<span style="color:#0000ff; ">,</span> SIGNAL<span style="color:#0000ff; ">(</span>accepted<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span> <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span> SLOT<span style="color:#0000ff; ">(</span>createItemList<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>newList<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>exec<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">!</span><span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        QString s <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newList<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString r <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newList<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getType<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString a <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newList<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getDescription<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        bool c <span style="color:#0000ff; ">=</span> bool<span style="color:#0000ff; ">(</span>newList<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isImp<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        arrayListe<span style="color:#0000ff; ">.</span>push_back<span style="color:#0000ff; ">(</span>List<span style="color:#0000ff; ">(</span>s<span style="color:#0000ff; ">,</span> r<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; ">}</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_newAct_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    lastRowSelectedActivities <span style="color:#0000ff; ">=</span> arrayListe<span style="color:#0000ff; ">[</span>lastRowSelectedList<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    newActivity <span style="color:#0000ff; ">=</span> new newActivityWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    QObject<span style="color:#0000ff; ">::</span><span style="color:#0000ff; font-weight:bold; ">connect</span><span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">,</span>SIGNAL<span style="color:#0000ff; ">(</span>accepted<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span> <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span> SLOT<span style="color:#0000ff; ">(</span>createItemList<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span> <span style="color:#0000ff; ">(</span>arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        QMessageBox<span style="color:#0000ff; ">::</span>information<span style="color:#0000ff; ">(</span>
+                            <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span>
+                            tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Application Name</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                            tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">insérer une liste</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    <span style="color:#0000ff; font-weight:bold; ">else</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>exec<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">!</span><span style="color:#0000ff; ">=</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">int</span> currentRow <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString n <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString a <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getDescription<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QDate d <span style="color:#0000ff; ">=</span> QDate<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        bool c <span style="color:#0000ff; ">=</span> bool<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isFinished<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        Activity b<span style="color:#0000ff; ">(</span>n<span style="color:#0000ff; ">,</span> a<span style="color:#0000ff; ">,</span> d<span style="color:#0000ff; ">,</span> c<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>b<span style="color:#0000ff; ">.</span>setDate<span style="color:#0000ff; ">(</span>d<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span>false<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                            QMessageBox<span style="color:#0000ff; ">::</span>information<span style="color:#0000ff; ">(</span>
+                                <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span>
+                                tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Application Name</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                                tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Erreur de données</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                            <span style="color:#0000ff; font-weight:bold; ">return</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; ">}</span>
+                        arrayListe<span style="color:#0000ff; ">[</span>currentRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>addActivity<span style="color:#0000ff; ">(</span>b<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    <span style="color:#0000ff; ">}</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>vistaLista<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>clear<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">int</span> currentRow <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>currentRow <span style="color:#0000ff; ">&gt;</span><span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span> <span style="color:#0000ff; ">&amp;</span><span style="color:#0000ff; ">&amp;</span> currentRow <span style="color:#0000ff; ">&lt;</span> arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">for</span> <span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">int</span> i<span style="color:#0000ff; ">=</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">;</span>i<span style="color:#0000ff; ">&lt;</span>arrayListe<span style="color:#0000ff; ">[</span>currentRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>i<span style="color:#0000ff; ">+</span><span style="color:#0000ff; ">+</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                            <span style="color:#0000ff; font-weight:bold; ">if</span> <span style="color:#0000ff; ">(</span> arrayListe<span style="color:#0000ff; ">[</span>currentRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>getActivity<span style="color:#0000ff; ">(</span>i<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isDone<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                            ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>vistaLista<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>addItem<span style="color:#0000ff; ">(</span>arrayListe<span style="color:#0000ff; ">[</span>currentRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>getActivity<span style="color:#0000ff; ">(</span>i<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>descriptor<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">+</span> <span style="color:#0000e6; ">"</span><span style="color:#0000e6; "> </span><span style="color:#0000e6; ">"</span> <span style="color:#0000ff; ">+</span> <span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Done:�'️</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                            updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                
+                            <span style="color:#0000ff; ">}</span><span style="color:#0000ff; font-weight:bold; ">else</span><span style="color:#0000ff; ">{</span>
+                                   ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>vistaLista<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>addItem<span style="color:#0000ff; ">(</span>arrayListe<span style="color:#0000ff; ">[</span>currentRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>getActivity<span style="color:#0000ff; ">(</span>i<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>descriptor<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                                 <span style="color:#0000ff; ">}</span>
+                        <span style="color:#0000ff; ">}</span>
+                    <span style="color:#0000ff; ">}</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>vistaLista<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setCurrentRow<span style="color:#0000ff; ">(</span> lastRowSelectedActivities <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>clear<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">for</span> <span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">int</span> i<span style="color:#0000ff; ">=</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">;</span>i<span style="color:#0000ff; ">&lt;</span>arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>i<span style="color:#0000ff; ">+</span><span style="color:#0000ff; ">+</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        List currentList <span style="color:#0000ff; ">=</span> arrayListe<span style="color:#0000ff; ">.</span>at<span style="color:#0000ff; ">(</span>i<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>addItem<span style="color:#0000ff; ">(</span> QString<span style="color:#0000ff; ">(</span> currentList<span style="color:#0000ff; ">.</span>getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">+</span> <span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">-</span><span style="color:#0000e6; ">"</span> <span style="color:#0000ff; ">+</span> currentList<span style="color:#0000ff; ">.</span>getType<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">+</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; "> </span><span style="color:#0000e6; ">\t</span><span style="color:#0000e6; "> </span><span style="color:#0000e6; ">"</span> <span style="color:#0000ff; ">+</span> QVariant<span style="color:#0000ff; ">(</span>currentList<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">.</span>toString<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                        ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setCurrentRow<span style="color:#0000ff; ">(</span>lastRowSelectedList<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_liste_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">const</span> QModelIndex <span style="color:#0000ff; ">&amp;</span>index<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    lastRowSelectedList <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    lastRowSelectedActivities <span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">;</span>
+                    updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_deleteActivity_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    lastRowSelectedActivities <span style="color:#0000ff; ">=</span> arrayListe<span style="color:#0000ff; ">[</span>lastRowSelectedList<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">-</span><span style="color:#800000; ">1</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">int</span> currentActivityRow <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>vistaLista<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">int</span> currentListRow <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span> arrayListe<span style="color:#0000ff; ">[</span>currentListRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">&lt;</span><span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">return</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    arrayListe<span style="color:#0000ff; ">[</span>currentListRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>removeActivity<span style="color:#0000ff; ">(</span>currentActivityRow<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>vistaLista<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setCurrentRow<span style="color:#0000ff; ">(</span> arrayListe<span style="color:#0000ff; ">[</span>currentListRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">-</span><span style="color:#800000; ">1</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_deleteList_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span> arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">&gt;</span> <span style="color:#800000; ">0</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">int</span> currentListRow <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        arrayListe<span style="color:#0000ff; ">.</span>erase<span style="color:#0000ff; ">(</span>arrayListe<span style="color:#0000ff; ">.</span>begin<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">+</span> currentListRow<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setCurrentRow<span style="color:#0000ff; ">(</span>arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">-</span><span style="color:#800000; ">1</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_liste_itemDoubleClicked<span style="color:#0000ff; ">(</span>QListWidgetItem <span style="color:#0000ff; ">*</span>item<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                    newActivity <span style="color:#0000ff; ">=</span> new newActivityWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>setDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    QObject<span style="color:#0000ff; ">::</span><span style="color:#0000ff; font-weight:bold; ">connect</span><span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">,</span>SIGNAL<span style="color:#0000ff; ">(</span>accepted<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span> <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span> SLOT<span style="color:#0000ff; ">(</span>createItemList<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span> <span style="color:#0000ff; ">(</span>arrayListe<span style="color:#0000ff; ">.</span>size<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        QMessageBox<span style="color:#0000ff; ">::</span>information<span style="color:#0000ff; ">(</span>
+                            <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span>
+                            tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Application Name</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                            tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Insérer une liste</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    <span style="color:#0000ff; font-weight:bold; ">else</span><span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>exec<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">!</span><span style="color:#0000ff; ">=</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                        <span style="color:#0000ff; font-weight:bold; ">int</span> currentRow <span style="color:#0000ff; ">=</span> ui<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>liste<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>currentRow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString n <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getName<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QString a <span style="color:#0000ff; ">=</span> QString<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getDescription<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        QDate d <span style="color:#0000ff; ">=</span> QDate<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>getDate<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        bool c <span style="color:#0000ff; ">=</span> bool<span style="color:#0000ff; ">(</span>newActivity<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span>isFinished<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        Activity b<span style="color:#0000ff; ">(</span>n<span style="color:#0000ff; ">,</span> a<span style="color:#0000ff; ">,</span> d<span style="color:#0000ff; ">,</span> c<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>b<span style="color:#0000ff; ">.</span>setDate<span style="color:#0000ff; ">(</span>d<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span>false<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">{</span>
+                            QMessageBox<span style="color:#0000ff; ">::</span>information<span style="color:#0000ff; ">(</span>
+                                <span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span>
+                                tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Application Name</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">,</span>
+                                tr<span style="color:#0000ff; ">(</span><span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">erreur de données</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span> <span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                            <span style="color:#0000ff; font-weight:bold; ">return</span><span style="color:#0000ff; ">;</span>
+                        <span style="color:#0000ff; ">}</span>
+                        arrayListe<span style="color:#0000ff; ">[</span>currentRow<span style="color:#0000ff; ">]</span><span style="color:#0000ff; ">.</span>addActivity<span style="color:#0000ff; ">(</span>b<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                        updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; ">}</span>
+                    <span style="color:#0000ff; ">}</span>
+                <span style="color:#0000ff; ">}</span>
+                
+                
+                <span style="color:#0000ff; font-weight:bold; ">void</span> MainWindow<span style="color:#0000ff; ">::</span>on_close_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span>
+                <span style="color:#0000ff; ">{</span>
+                    <span style="color:#0000ff; font-weight:bold; ">auto</span> reply <span style="color:#0000ff; ">=</span> QMessageBox<span style="color:#0000ff; ">::</span>question<span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">this</span><span style="color:#0000ff; ">,</span> <span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Exit</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">,</span>
+                                                       <span style="color:#0000e6; ">"</span><span style="color:#0000e6; ">Do you really want to quit?</span><span style="color:#0000e6; ">"</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                    <span style="color:#0000ff; font-weight:bold; ">if</span><span style="color:#0000ff; ">(</span>reply <span style="color:#0000ff; ">=</span><span style="color:#0000ff; ">=</span> QMessageBox<span style="color:#0000ff; ">::</span>Yes<span style="color:#0000ff; ">)</span>
+                        qApp<span style="color:#0000ff; ">-</span><span style="color:#0000ff; ">&gt;</span><span style="color:#0000ff; font-weight:bold; ">exit</span><span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+                </pre>
+
+
+
+            <p style="color:#979797"><code class="language-plaintext highlighter-black">mainwindow.h</code> with the following code:</p>
+
+
+
+            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">ifndef</span><span style="color:#004a43; "> MAINWINDOW_H</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> MAINWINDOW_H</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QMainWindow</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QStandardItemModel</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QStandardItem</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">newlistwindow.h</span><span style="color:#0000e6; ">"</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">newactivitywindow.h</span><span style="color:#0000e6; ">"</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QListWidgetItem</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QListWidget</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">list.h</span><span style="color:#0000e6; ">"</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">"</span><span style="color:#40015a; ">activity.h</span><span style="color:#0000e6; ">"</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QDate</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QErrorMessage</span><span style="color:#0000e6; ">&gt;</span>
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#0000e6; ">&lt;</span><span style="color:#40015a; ">QMessageBox</span><span style="color:#0000e6; ">&gt;</span>
+    
+    
+    namespace Ui <span style="color:#0000ff; ">{</span>
+    class MainWindow<span style="color:#0000ff; ">;</span>
+    <span style="color:#0000ff; ">}</span>
+    
+    class MainWindow <span style="color:#0000ff; ">:</span> public QMainWindow<span style="color:#0000ff; ">{</span>
+        Q_OBJECT
+    
+    <span style="color:#e34adc; ">public:</span>
+        <span style="color:#0000ff; font-weight:bold; ">explicit</span> MainWindow<span style="color:#0000ff; ">(</span>QWidget <span style="color:#0000ff; ">*</span>parent <span style="color:#0000ff; ">=</span> <span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; ">~</span>MainWindow<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+    
+    private slots<span style="color:#0000ff; ">:</span>   
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_newList_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_newAct_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_liste_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; font-weight:bold; ">const</span> QModelIndex <span style="color:#0000ff; ">&amp;</span>index<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> updateActivityView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> updateListView<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_deleteActivity_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_deleteList_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_liste_itemDoubleClicked<span style="color:#0000ff; ">(</span>QListWidgetItem <span style="color:#0000ff; ">*</span>item<span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">void</span> on_close_clicked<span style="color:#0000ff; ">(</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+    
+    <span style="color:#e34adc; ">private:</span>
+        Ui<span style="color:#0000ff; ">::</span>MainWindow <span style="color:#0000ff; ">*</span>ui<span style="color:#0000ff; ">;</span>
+        QStandardItemModel <span style="color:#0000ff; ">*</span>listModel<span style="color:#0000ff; ">;</span>
+        newListWindow<span style="color:#0000ff; ">*</span> newList<span style="color:#0000ff; ">;</span>
+        newActivityWindow<span style="color:#0000ff; ">*</span> newActivity<span style="color:#0000ff; ">;</span>
+        std<span style="color:#0000ff; ">::</span>vector<span style="color:#0000ff; ">&lt;</span>List<span style="color:#0000ff; ">&gt;</span> arrayListe<span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">int</span> lastRowSelectedList<span style="color:#0000ff; ">;</span>
+        <span style="color:#0000ff; font-weight:bold; ">int</span> lastRowSelectedActivities<span style="color:#0000ff; ">;</span>
+    <span style="color:#0000ff; ">}</span><span style="color:#0000ff; ">;</span>
+    
+    <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span><span style="color:#004a43; "> </span><span style="color:#008000; ">// MAINWINDOW_H</span>
+    </pre>
+
+
+
+
+            <p>Delete and close</p>
+
+            <center>
+
+                <img src="./image/11.gif">
+            </center>
+
+
+            <div class="center">
+                <img src="./image/Capture1.PNG" />
+                <div class="figcaption">
+                    To DO Application
+                </div>
+            </div>
+
+
+            </article>
+
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="post">
+
+                <div>
+                    <h1 id="conclusion">
+                        <u style="color:#a50202">Conclusion</u></h1>
+
+                    <p>
+
+                        <div class="center"></div>In this tutorial, we successfully built a todo list app in Qt Creator that allows a user to add new list and tasks and delete old ones.and we hope this practical course will help us in some ways to develop our complex and
+                        progress skills in the future.
+                    </p>
+                    <p> Thanks for reading !!!</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+    <footer class="site-footer">
+
+        <div class="wrapper">
+
+
+
+            <div class="footer-col-wrapper">
+                <div class="footer-col footer-col-1">
+                    <ul class="contact-list">
+                        <li class="p-name" style="color:#000000">Amal Lamini </li>
+                        <li><a class="u-email" href="lamini.amal2001@gmail.com">lamini.amal2001@gmail.com</a></li>
+                    </ul>
+                    <ul class="contact-list">
+                        <li class="p-name" style="color:#000000">Fatima Ezzahra Seffari</li>
+                        <li><a class="u-email" href="fatimaezzahraseffari3@gmail.com">fatimaezzahraseffari3@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-col-2">
+                    <ul class="social-media-list">
+                        <li><a href="https://github.com/amalfati" target="_blank"><i class="fab fa-github"></i> <span class="username">https://github.com/amalfati</span></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
